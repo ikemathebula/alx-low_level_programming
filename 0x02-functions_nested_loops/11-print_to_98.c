@@ -1,40 +1,32 @@
-#include "main.h"
+#include <stdio.h>
+
 /**
- * times_table - a function that prints the 9 times table, starting with 0
- * rone = row, cone = column, d = digits of current result
- * Return: times table
- * add extra space past single digit
+ * print_to_98 - the function prints all natural number from n to 98
+ * @n: this starts all the counting
+ * Return: returns void
  */
-void times_table(void)
+void print_to_98(int n)
 {
-	int rone, cone, d;
-
-	for (rone = 0; rone <= 9; rone++)
+	if (n > 98)
 	{
-		_putchar('0');
-		_putchar(',');
-		_putchar(' ');
-		for (cone = 1; cone <= 9; cone++)
+		while (n >= 98)
 		{
-			d = (rone * cone);
-			if ((d / 10) > 0)
-			{
-				_putchar((d / 10) + '0');
-			}
+			if (n == 98)
+				printf("%d\n", n);
 			else
-			{
-				_putchar(' ');
-			}
-			_putchar((d % 10) + '0');
-
-			if (cone < 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+				printf("%d, ", n);
+			n--;
 		}
-		_putchar('\n');
+	}
+	else
+	{
+		while (n <= 98)
+		{
+			if (n == 98)
+				printf("%d\n", n);
+			else
+				printf("%d, ", n);
+			n++;
+		}
 	}
 }
-
-
