@@ -2,22 +2,24 @@
 #include <stdlib.h>
 
 /**
- * main - prints the opcodes of its own main function
+ * main - Prints the opcodes of itself.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
- * @argv: the argument that enters to the program
- * @argc: counts the number of arguments
- *
- * Return: the opcode hex number
+ * Return: Always 0.
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int runner = 0, bytes;
+	int bytes, index;
+	int (*address)(int, char **) = main;
+	unsigned char opcode;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
+
 	bytes = atoi(argv[1]);
 
 	if (bytes < 0)
@@ -25,13 +27,20 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(2);
 	}
-	while (runner < bytes)
+
+	for (index = 0; index < bytes; index++)
 	{
-		printf("%02hhx", *((char *)(main + runner)));
-		if (bytes > runner + 1)
-			printf(" ");
-		runner++;
+		opcode = *(unsigned char *)address;
+		printf("%.2x", opcode);
+
+		if (index == bytes - 1)
+			continue;
+		printf(" ");
+
+		address++;
 	}
-	printf("\n")
-		return (0);
+
+	printf("\n");
+
+	return (0);
 }
