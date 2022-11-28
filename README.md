@@ -1,2 +1,4 @@
 A low-level programming language, is a language that provides little or no abstraction from a computer's instruction set architecture—commands or functions in the language map closely to processor instructions. Generally, this refers to either machine code or assembly language. Low-level languages are sometimes described as being close to hardware because they can frequently be executed with a minimum of run-time support. By contrast, a high-level programming language isolates execution semantics of a computer architecture from most details of the hardware.
+
+
 C is a versatile and widely used programming language. It is a low-level systems programming language that provides efficient memory management. C is often used for system programming, such as operating system (OS) kernels, as well as embedded systems, which are devices that use limited resources.
